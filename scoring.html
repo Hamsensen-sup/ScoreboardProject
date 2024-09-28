@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Home</h2>
+        <h1 id="home-el">0</h1>
+        <p id="home-display">Penalty</p>
+        <div class="fouls">
+            <h3>Team Fouls: </h3>
+            <h3 id="home-fouls">0</h3>
+        </div>
+        <button id="home-1pt">1 Points</button>
+        <button id="home-2pt">2 Points</button>
+        <button id="home-3pt">3 Points</button>
+        <button id="deduct-home">Deduct</button>
+        <button id="homefoul-btn">Foul</button>
+
+
+    </div>
+    
+    <div class="container">
+        <h2>Away</h2>
+        <h1 id="away-el">0</h1>
+        <p id="away-display">Penalty</p>
+        <div class="fouls">
+            <h3>Team Fouls</h3>
+            <h3 id="away-fouls">0</h3>
+        </div>
+        <button id="away-1pt">1 Points</button>
+        <button id="away-2pt">2 Points</button>
+        <button id="away-3pt">3 Points</button>
+        <button id="deduct-away">Deduct</button>
+        <button id="awayfoul-btn">Foul</button>
+
+
+    </div>
+
+</body>
+<script>
+    let onePointHome = document.querySelector("#home-1pt")
+    let twoPointHome = document.querySelector("#home-2pt")
+    let threePointHome = document.querySelector("#home-3pt")
+    let homeFouls = document.querySelector("#home-fouls")
+    let homeFoulBtn = document.querySelector("#homefoul-btn")
+    let homeDisplay = document.querySelector("#home-display")
+
+    let onePointAway = document.querySelector("#away-1pt")
+    let twoPointAway = document.querySelector("#away-2pt")
+    let threePointAway = document.querySelector("#away-3pt")
+    let awayFouls = document.querySelector("#away-fouls")
+    let awayFoulBtn = document.querySelector("#awayfoul-btn")
+    let awayDisplay = document.querySelector("#away-display")
+
+    let homeEl = document.querySelector("#home-el")
+    let awayEl = document.querySelector("#away-el")
+    let deductHome = document.querySelector("#deduct-home")
+    let deductAway = document.querySelector("#deduct-away")
+    let homeCount = 0
+    let homeFoulCount = 0
+    let awayCount = 0
+    let awayFoulCount = 0
+
+    // For Away Scoreboard
+    onePointHome.addEventListener("click", function(){
+        homeEl.textContent = homeCount += 1
+    })
+    twoPointHome.addEventListener("click", function(){
+        homeEl.textContent = homeCount += 2
+    })
+    threePointHome.addEventListener("click", function(){
+        homeEl.textContent = homeCount += 3
+    })
+    deductHome.addEventListener("click", function(){
+        homeEl.textContent = homeCount -= 1
+    })
+    homeFoulBtn.addEventListener("click", function(){
+        homeFouls.textContent = homeFoulCount += 1
+
+        if(homeFoulCount === 5){
+            homeDisplay.style.color = "red"
+            homeDisplay.style.fontWeight = "bolder"
+        }
+    })
+
+
+    // For Away Scoreboard
+    onePointAway.addEventListener("click", function(){
+        awayEl.textContent = awayCount += 1
+    })
+    twoPointAway.addEventListener("click", function(){
+        awayEl.textContent = awayCount += 2
+    })
+    threePointAway.addEventListener("click", function(){
+        awayEl.textContent = awayCount += 3
+    })
+    deductAway.addEventListener("click", function(){
+        awayEl.textContent = awayCount -= 1
+    })
+    awayFoulBtn.addEventListener("click", function(){
+        awayFouls.textContent = awayFoulCount += 1
+
+        if(awayFoulCount === 5){
+            awayDisplay.style.color = "red"
+            awayDisplay.style.fontWeight = "bolder"
+        }
+    })
+
+
+
+
+</script>
+</html>
