@@ -82,3 +82,15 @@ button{
 #deduct-home, #deduct-away{
     background-color: darkred;
 }
+
+@media screen and (max-width: 512px){
+    body{
+        display: block;
+        flex-direction: column;
+        overflow: auto;
+        margin: 2rem;
+    }
+    .container{
+        margin-bottom: 1rem;
+    }
+}
